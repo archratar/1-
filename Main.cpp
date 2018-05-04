@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Person.h"
+#include "employee.h"
 
 using namespace std;
 
@@ -10,11 +10,18 @@ int main(int argc, char** argv) {
 	string middleName = "Olegovich";
 	string date = "23.04.11";
 	string sex = "male";
+	
+	string organization = "Org";
+	string profession = "prof";
+	string diplomaIn = "CS";
+	string position = "junior";
+	int salary = 100;
+	int workExperience = 10; 
 
 	Person person(name, surname, middleName, date, sex);
-	Person person1 = person;
-
-	cout << person.toString() << endl;
-	cout << person1.toString() << endl;
+	Employee employee(organization, profession, diplomaIn, position, salary, workExperience, person);
+	cout << employee << endl;
+	cin >> employee;
+	cout << employee;
 	return 0;
 }

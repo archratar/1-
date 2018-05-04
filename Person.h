@@ -3,11 +3,22 @@
 using namespace std;
 
 class Person {
+	
+	// constructor, destructor, copy operator
 	public:
 		Person(string name, string surname, string middleName, string date, string sex);
 		~Person();
 		Person(const Person &person);
-		string toString();
+	// (), =, <<, >>
+	public:		
+		operator() (string name, string surname, string middleName, string date, string sex);
+		operator= (const Person &person);
+		friend std::ostream& operator<< (std::ostream &out, const Person &person);
+		friend std::istream& operator>> (std::istream &in, Person &person);
+	public:
+		virtual void info(void);
+	// getters & setters
+	public:
 		string getName(void);
 		void setName(string newName);
 		string getSurname(void);
@@ -18,6 +29,7 @@ class Person {
 		void setDate(string newDate);
 		string getSex(void);
 		void setSex(string newSex);
+	// data fields	
 	private:
 		string name;
 		string surname;
