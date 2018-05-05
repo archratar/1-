@@ -4,25 +4,7 @@
 
 using namespace std;
 
-//Employee::Employee(string organization, 
-//				   string profession, 
-//				   string diplomaIn, 
-//				   string position, 
-//				   int salary, 
-//				   int workExperience, 
-//				   string name, 
-//				   string surname, 
-//				   string middleName, 
-//				   string date, 
-//				   string sex)
-//		: Person(name, surname, middleName, date, sex) {
-//	this->organization = organization;
-//	this->profession = profession;
-//	this->diplomaIn = diplomaIn;
-//	this->position = position;
-//	this->salary = salary;
-//	this->workExperience = workExperience;
-//}
+Employee::Employee() {}
 
 Employee::Employee(string organization, 
 				   string profession, 
@@ -85,17 +67,31 @@ std::ostream& operator<< (std::ostream &out, const Employee &employee) {
 }
 
 std::istream& operator>> (std::istream &in, Employee &employee) {
+	cout << "enter organization" << endl;
 	in >> employee.organization;
+	cout << "enter profession" << endl;
 	in >> employee.profession;
+	cout << "enter diploma" << endl;
 	in >> employee.diplomaIn;
+	cout << "enter position" << endl;
 	in >> employee.position;
+	cout << "enter salary number" << endl;
 	in >> employee.salary;
+	cout << "enter work experience in years" << endl;
 	in >> employee.workExperience;
 	return in;
 }
 
+void Employee::bind(Person &person) {
+	this->setName(person.getName());
+	this->setSurname(person.getSurname());
+	this->setMiddleName(person.getMiddleName());
+	this->setDate(person.getDate());
+	this->setSex(person.getSex());
+}
+
 void Employee::info(void) {
-	cout << this->organization;
+	cout << this->organization << endl;
 }
 
 void Employee::setOrganization(string organization) {

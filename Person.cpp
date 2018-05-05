@@ -5,6 +5,8 @@
 using namespace std;
 
 // constructor
+Person::Person() {}
+
 Person::Person(string name, string surname, string middleName, string date, string sex) {
 	this->name = name;
 	this->surname = surname;
@@ -55,16 +57,21 @@ std::ostream& operator<< (std::ostream &out, const Person &person) {
 
 // >> operator
 std::istream& operator>> (std::istream &in, Person &person) {
+	cout << "enter name" << endl;
 	in >> person.name;
+	cout << "enter surname" << endl;
 	in >> person.surname;
+	cout << "enter middle name" << endl;
 	in >> person.middleName;
+	cout << "enter date" << endl;
 	in >> person.date;
+	cout << "enter sex" << endl;
 	in >> person.sex;
 	return in;
 }
 
 void Person::info(void) {
-	cout << this->surname;
+	cout << this->surname << endl;
 }
 
 /* getters & setters */

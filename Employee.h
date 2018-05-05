@@ -7,8 +7,7 @@ class Employee: public Person {
 	friend class Person;
 	// constructor, destructor, copy operator
 	public:
-//		Employee(string organization, string profession, string diplomaIn, string position, int salary, int workExperience, 
-//				   string name, string surname, string middleName, string date, string sex);
+		Employee();
 		Employee(string organization, string profession, string diplomaIn, string position, int salary, int workExperience, const Person &person);
 		~Employee();
 		Employee(const Employee &employee, const Person &person);
@@ -24,9 +23,11 @@ class Employee: public Person {
 		friend std::ostream& operator<< (std::ostream &out, const Employee &employee);
 		friend std::istream& operator>> (std::istream &in, Employee &employee);
 	public:
+	// inherited method for showing late binding
 		void info(void);
 	// getters & setters
 	public:
+		void bind(Person &person);
 		void setOrganization(string organization);
 		string getOrganization();
 		void setProfession(string profession);

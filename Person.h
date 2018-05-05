@@ -3,9 +3,9 @@
 using namespace std;
 
 class Person {
-	
 	// constructor, destructor, copy operator
 	public:
+		Person();
 		Person(string name, string surname, string middleName, string date, string sex);
 		~Person();
 		Person(const Person &person);
@@ -16,6 +16,7 @@ class Person {
 		friend std::ostream& operator<< (std::ostream &out, const Person &person);
 		friend std::istream& operator>> (std::istream &in, Person &person);
 	public:
+	// virtal method for showing late binding
 		virtual void info(void);
 	// getters & setters
 	public:

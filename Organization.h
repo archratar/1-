@@ -1,13 +1,16 @@
 #include <string>
+#include <vector>
 #include "employee.h"
 
 using namespace std;
 
 class Organization {
+	// constructor, destructor
 	public:
-		Organization(Employee employees[]);
+		Organization(vector<Employee> employees);
 		~Organization();
-		Employee* getEmployees();
+	public:
+		vector<Employee> getEmployees();
 	private:
-		Employee employees[];
+		vector<Employee> employees;
 };
