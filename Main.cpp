@@ -46,6 +46,7 @@ int main(int argc, char** argv) {
 	}
 	cout << "Employees with exp more than " << workExperience << " is " << countMaxExp << endl;
 	
+	delete &employees, &i, p;
 	delete &person, &person1, &person2;
 	delete &employee, &employee1, &employee2;
 	return 0;
